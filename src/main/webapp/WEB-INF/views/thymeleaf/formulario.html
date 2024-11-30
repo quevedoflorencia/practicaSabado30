@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Formulario de Suscripción</title>
+
+  <!-- Boostrap core css -->
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}"/>
+
+  <!-- custom style -->
+  <link rel="stylesheet" th:href="@{/css/main.css}"/>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f9;
+        margin: 0;
+    }
+    .form-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 600px;
+    }
+    .form-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .form-container input, .form-container label, .form-container button {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    .form-container button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    .form-container button:hover {
+        background-color: #45a049;
+    }
+    .form-container .btn-secondary {
+        background-color: #007BFF;
+    }
+    .form-container .btn-secondary:hover {
+        background-color: #0056b3;
+    }
+    .radio-group {
+        display: flex;
+        flex-direction: column;
+
+    }
+    .radio-group label {
+        margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#">UNLAM</a>
+</nav>
+
+<main role="main" class="container">
+  <div class="form-container">
+    <h2>Suscripción</h2>
+    <form action="#" method="POST">
+      <!-- Campo de número de DNI -->
+      <label for="dni">Número de DNI:</label>
+      <input type="text" id="dni" name="dni" placeholder="Ingresa tu DNI" required>
+
+      <!-- Selección de plan con radio buttons -->
+      <label>Selecciona un plan:</label>
+      <div class="radio-group">
+        <label>
+          <input type="radio" id="planBasico" name="plan" value="basico" required> Plan Básico
+
+        </label>
+        <label>
+          <input type="radio" id="planPremium" name="plan" value="premium" required>
+          Plan Premium
+        </label>
+      </div>
+
+      <!-- Botones -->
+      <button type="submit" formaction="/suscribirse">Suscribirse</button>
+      <a id="ir-a-historial" href="historial">Historial</a>
+    </form>
+  </div>
+
+
+</main>
+<!-- /.container -->
+
+<!-- Boostrap core js -->
+<script type="text/javascript" th:src="@{webjars/bootstrap/5.2.0/js/bootstrap.min.js}"></script>
+</body>
+</html>
